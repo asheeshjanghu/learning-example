@@ -1,5 +1,6 @@
 const restify = require('restify');
 
+//create server
 let server = restify.createServer();
 server.use(restify.plugins.queryParser()); // this is required for parsing the query parameters
 
