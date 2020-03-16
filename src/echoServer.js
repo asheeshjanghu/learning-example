@@ -1,4 +1,5 @@
 const restify = require('restify');
+const fibonacci_sequencer = require('./controllers/fibonacci_sequence.js');
 
 //create server
 let server = restify.createServer();
@@ -34,6 +35,16 @@ function queryExample(req, res, next) {
 // example for query parameters
 // example url-> http://lpocalhost:8080/profile?name="Asheesh"
 server.get("/profile", queryExample);
+
+function nthFib(req, res, next) {
+    let n = req.params.n;
+    let fibNum = fibonacci_sequencer.nthFib(n);
+    console.log(`${n}th fibonacci number is ${fibNum}`);
+    res.send(n);
+    return next();
+}
+// to get nth fibonacci number
+server.get("/fib/:n", nthFib);
 
 server.listen(8080, () => {
     console.log("Listening on 8080");
