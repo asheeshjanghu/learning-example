@@ -47,5 +47,5 @@ function nthFib(req, res, next) {
 server.get("/fib/:n", nthFib);
 
 server.listen(process.env.PORT, () => {
-    console.log(`Listening on ${process.env.PORT}. welcome from ${process.env.USER_NAME}` );
+    console.log(`Listening on ${process.env.PORT}. welcome from ${process.env.USER_NAME} in ${process.env.APP_ENV} environment ` );
 })

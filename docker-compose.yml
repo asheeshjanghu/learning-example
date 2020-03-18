@@ -4,5 +4,7 @@ services:
     build: .
     ports:
     - "80:8080"
+    environment:
+      APP_ENV: "dev"
   redis:
     image: "redis:3-alpine"
