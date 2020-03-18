@@ -7,7 +7,7 @@
   ],
   "main": "src/echoServer.js",
   "scripts": {
-    "start": "node src/echoServer.js",
+    "start": "PORT=8080 node src/echoServer.js",
     "test": "mocha"
   },
   "keywords": [],

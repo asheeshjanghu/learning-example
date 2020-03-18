@@ -46,6 +46,6 @@ function nthFib(req, res, next) {
 // to get nth fibonacci number
 server.get("/fib/:n", nthFib);
 
-server.listen(8080, () => {
-    console.log("Listening on 8080");
+server.listen(process.env.PORT, () => {
+    console.log(`Listening on ${process.env.PORT}. welcome from ${process.env.USER_NAME}` );
 })
